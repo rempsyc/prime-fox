@@ -1,0 +1,76 @@
+/* Self-host old (pre-2021) Montserrat to preserve original letterforms */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/montserrat-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/montserrat-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/montserrat-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold site name in navbar, normal weight for menu items */
+.navbar-brand {
+  font-weight: 700 !important;
+  font-family: var(--hb-font-heading) !important;
+  margin-right: 1rem !important;
+}
+#nav-menu a {
+  font-weight: 400 !important;
+}
+
+/* Center brand+menu group within a max-width container */
+nav.navbar {
+  max-width: 1200px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Show desktop menu at md (768px) instead of lg (1024px) to match old Wowchemy */
+@media (min-width: 768px) {
+  #nav-menu {
+    display: flex !important;
+    width: auto !important;
+    padding-bottom: 0 !important;
+  }
+  label[for="nav-toggle"] {
+    display: none !important;
+  }
+}
+
+/* Remove max-w-prose constraint on landing page markdown blocks */
+.max-w-prose {
+  max-width: 100% !important;
+}
+
+/* Blue links (matching old Wowchemy style) */
+a {
+  color: #2962ff;
+}
+a:hover {
+  color: #0039cb;
+}
+/* Keep navbar links their own color */
+nav.navbar a,
+nav.navbar a:hover {
+  color: inherit;
+}
+/* Keep heading links dark */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: inherit;
+}
+h1 a:hover, h2 a:hover, h3 a:hover {
+  color: inherit;
+}

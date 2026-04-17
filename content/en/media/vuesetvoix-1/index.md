@@ -1,0 +1,35 @@
+---
+title: Do You Have Limits?
+tags:
+- Radio
+date: '2018-12-07T00:33:00Z'
+external_link: https://canalm.vuesetvoix.com/avez-vous-des-limites/
+---
+
+Unused/optional fields below ---
+
+summary: ""
+
+image:
+  caption: ""
+  focal_point:
+
+
+#links:
+#- icon: twitter
+
+#  icon_pack: fab
+
+#  name: Follow
+
+#  url: https://twitter.com/georgecushen
+
+url_code: ""
+
+url_pdf: ""
+
+url_slides: ""
+
+slides: example
+---
+This week, Émanuelle and her guests discuss limits: do you know your limits well? With around the table: Jean-Marie Lapointe, actor, author, speaker and host of the program Face à la rue, as well as Rémi Thériault, doctoral student in social psychology, who works on prosocial behaviour.

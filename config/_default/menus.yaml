@@ -5,23 +5,32 @@
 
 main:
   - name: Bio
-    url: /
-    weight: 10
-  - name: Papers
-    url: /#papers
-    weight: 11
-  - name: Talks
-    url: /#talks
-    weight: 12
-  - name: News
-    url: /#news
-    weight: 13
-  - name: Experience
-    url: experience/
+    url: bio/
     weight: 20
-  - name: Projects
-    url: projects/
+  - name: Publications
+    url: publications/
     weight: 30
-  - name: Courses
-    url: courses/
+  - name: News
+    url: news/
     weight: 40
+  - name: Blog
+    url: blog/
+    weight: 45
+  - name: Media
+    url: media/
+    weight: 50
+  - name: R Tutorials
+    url: tutorials/
+    weight: 60
+  - name: CV
+    url: cv.pdf
+    weight: 70
+    params:
+      target: _blank
+      rel: noopener
+  - name: Contact
+    url: contact/
+    weight: 80
+  - name: Donate
+    url: donate/
+    weight: 90

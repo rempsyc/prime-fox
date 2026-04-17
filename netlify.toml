@@ -21,7 +21,7 @@
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.159.2"
+  HUGO_VERSION = "0.160.1"
   GO_VERSION = "1.21.5"
   NODE_VERSION = "22"
   # Netlify runs an implicit install step; ensure it never enforces frozen lockfiles
@@ -59,3 +59,391 @@
   package = "netlify-plugin-hugo-cache-resources"
   [plugins.inputs]
     debug = true
+
+# ─── Headers ───────────────────────────────────────────────────────────────────
+
+[[headers]]
+  for = "*.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=UTF-8"
+
+[[headers]]
+  for = "index.xml"
+  [headers.values]
+    Content-Type = "application/rss+xml"
+
+# Prevent indexing of low-value auto-generated taxonomy/author pages
+[[headers]]
+  for = "/author/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/fr/author/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/authors/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/fr/authors/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/tags/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/fr/tags/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/categories/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/fr/categories/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/publication_types/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/fr/publication_types/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+# Prevent indexing of RSS feeds
+[[headers]]
+  for = "*.xml"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    # CSP — migrated from old site, updated for Blox v0.12 + Tailwind
+    Content-Security-Policy = '''
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' cdnjs.cloudflare.com cdn.jsdelivr.net www.googletagmanager.com www.google-analytics.com d1bxh8uas1mnw7.cloudfront.net badge.dimensions.ai embed.altmetric.com api.altmetric.com identity.netlify.com maps.googleapis.com;
+      style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com fonts.googleapis.com badge.dimensions.ai embed.altmetric.com;
+      img-src 'self' data: maps.googleapis.com maps.gstatic.com *.tile.openstreetmap.org cdnjs.cloudflare.com www.googletagmanager.com www.google-analytics.com d1bxh8uas1mnw7.cloudfront.net *.altmetric.com badge.dimensions.ai;
+      font-src 'self' cdnjs.cloudflare.com fonts.gstatic.com data:;
+      connect-src 'self' www.google-analytics.com analytics.google.com *.analytics.google.com www.googletagmanager.com cdn.jsdelivr.net maps.googleapis.com badge.dimensions.ai metrics-api.dimensions.ai identity.netlify.com cdnjs.cloudflare.com;
+      frame-src www.google.com www.googletagmanager.com d1bxh8uas1mnw7.cloudfront.net *.altmetric.com;
+      manifest-src 'self';
+      form-action 'none';
+      frame-ancestors 'none';
+      object-src 'none';
+      base-uri 'self';
+      upgrade-insecure-requests'''
+
+# ─── Redirects ─────────────────────────────────────────────────────────────────
+
+# Main section redirects
+[[redirects]]
+  from = "/papers"
+  to = "/publications/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/cv"
+  to = "/cv.pdf"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/rempsyc"
+  to = "https://rempsyc.remi-theriault.com"
+  status = 301
+  force = true
+
+# Old blog_*.html → rempsyc package docs
+[[redirects]]
+  from = "/blog_table.html"
+  to = "https://rempsyc.remi-theriault.com/articles/table"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_violin.html"
+  to = "https://rempsyc.remi-theriault.com/articles/violin"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_scatter.html"
+  to = "https://rempsyc.remi-theriault.com/articles/scatter"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_circles.html"
+  to = "https://rempsyc.remi-theriault.com/articles/circles"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_randomize.html"
+  to = "https://rempsyc.remi-theriault.com/articles/randomize"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_assumptions.html"
+  to = "https://rempsyc.remi-theriault.com/articles/assumptions"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_moderation.html"
+  to = "https://rempsyc.remi-theriault.com/articles/moderation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_t-test.html"
+  to = "https://rempsyc.remi-theriault.com/articles/t-test"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_contrasts.html"
+  to = "https://rempsyc.remi-theriault.com/articles/contrasts"
+  status = 301
+  force = true
+
+# blog_* without .html extension
+[[redirects]]
+  from = "/blog_table"
+  to = "https://rempsyc.remi-theriault.com/articles/table"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_violin"
+  to = "https://rempsyc.remi-theriault.com/articles/violin"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_scatter"
+  to = "https://rempsyc.remi-theriault.com/articles/scatter"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_circles"
+  to = "https://rempsyc.remi-theriault.com/articles/circles"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_randomize"
+  to = "https://rempsyc.remi-theriault.com/articles/randomize"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_assumptions"
+  to = "https://rempsyc.remi-theriault.com/articles/assumptions"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_moderation"
+  to = "https://rempsyc.remi-theriault.com/articles/moderation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_t-test"
+  to = "https://rempsyc.remi-theriault.com/articles/t-test"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog_contrasts"
+  to = "https://rempsyc.remi-theriault.com/articles/contrasts"
+  status = 301
+  force = true
+
+# Poster PDF redirects
+[[redirects]]
+  from = "/Theriault_IPPA_2019.pdf"
+  to = "/posters/Theriault_IPPA_2019.pdf"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/Theriault_Mind&Life_2019.pdf"
+  to = "/posters/Theriault_Mind&Life_2019.pdf"
+  status = 301
+  force = false
+
+# Paper PDF redirects
+[[redirects]]
+  from = "/Th%C3%A9riault_2019.pdf"
+  to = "/papers/Theriault_2019.pdf"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/Th%C3%A9riault_et_al_2021.pdf"
+  to = "/papers/Theriault_et_al_2021.pdf"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/Theriault_et_al_2022.pdf"
+  to = "/papers/Theriault_et_al_2022.pdf"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/Lifshitz_et_al_2017.pdf"
+  to = "/papers/Lifshitz_et_al_2017.pdf"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/Krol_et_al_2020.pdf"
+  to = "/papers/Krol_et_al_2020.pdf"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/Krol_et_al_2020_SOM.pdf"
+  to = "/papers/Krol_et_al_2020_SOM.pdf"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/Theriault_&_Raz_2018.pdf"
+  to = "/papers/Theriault_&_Raz_2018.pdf"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/Theriault_&_Raz_2018_SOM.pdf"
+  to = "/papers/Theriault_&_Raz_2018_SOM.pdf"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/Theriault_et_al_2021.pdf"
+  to = "/papers/Theriault_et_al_2021.pdf"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/Theriault_et_al_2022_SOM.pdf"
+  to = "/papers/Theriault_et_al_2022_SOM.pdf"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/Theriault_et_al_2021_SOM.pdf"
+  to = "/papers/Theriault_et_al_2021_SOM.pdf"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/papers/Miglianico_et_al_2022.pdf"
+  to = "/papers/Miglianico_et_al_2024.pdf"
+  status = 301
+  force = false
+
+# External redirects
+[[redirects]]
+  from = "/rempsyc_manual.pdf"
+  to = "https://cran.r-project.org/web/packages/rempsyc/rempsyc.pdf"
+  status = 301
+  force = false
+
+# Publication slug changes
+[[redirects]]
+  from = "/en/publication/2022-lavaanextra/"
+  to = "/publication/2023-lavaanextra/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/fr/publication/2022-lavaanextra/"
+  to = "/fr/publication/2023-lavaanextra/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/publication/2022-rempsyc/"
+  to = "/publication/2023-rempsyc/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/fr/publication/2022-rempsyc/"
+  to = "/fr/publication/2023-rempsyc/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/dashboards/busara/"
+  to = "/dashboards/missing_majority/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/publication/2022-pf/"
+  to = "/publication/2024-pf/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/fr/publication/2022-pf/"
+  to = "/fr/publication/2024-pf/"
+  status = 301
+  force = false
+
+# Preprint redirects
+[[redirects]]
+  from = "preprints/makowski_et_al_2023.pdf"
+  to = "preprints/makowski_et_al_report.pdf"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "preprints/theriault_et_al_2023.pdf"
+  to = "https://doi.org/10.31234/osf.io/bu6nt"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "preprints/theriault_et_al_2022_uberball.pdf"
+  to = "https://doi.org/10.31234/osf.io/xc4g7"
+  status = 301
+  force = false
+
+# Old /publication/ → new /publications/ (Blox v0.12 uses plural)
+[[redirects]]
+  from = "/publication/*"
+  to = "/publications/:splat"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/fr/publication/*"
+  to = "/fr/publications/:splat"
+  status = 301
+  force = false

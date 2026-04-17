@@ -1,0 +1,33 @@
+hugoblox:
+  meta:
+    format: "hugoblox-font@1"
+    name: "Custom"
+    vendor: "custom"
+    version: "1.0.0"
+    license: "MIT"
+    style: "sans-serif"
+    description: "Montserrat + Roboto to match original Wowchemy Academic theme"
+
+  families:
+    heading: "Montserrat"
+    body: "Roboto"
+    code: "Roboto Mono"
+
+  weights:
+    heading: [300, 400, 700]
+    body: [400, 700]
+    code: [400]
+
+  leading:
+    heading: 1.2
+    body: 1.6
+    code: 1.5
+
+  tracking:
+    heading: "0"
+    body: "0"
+
+  variable:
+    heading: false
+    body: false
+    code: false

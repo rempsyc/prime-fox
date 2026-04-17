@@ -1,0 +1,35 @@
+---
+title: Meta-Researcher Spotlight
+tags:
+- Press
+date: '2025-10-02T06:33:00Z'
+external_link: https://www.linkedin.com/posts/meta-research-collaborative_metaresearch-metasceince-scienceofscience-activity-7379557512271904769-ZnO-
+---
+
+Unused/optional fields below ---
+
+summary: ""
+
+image:
+  caption: ""
+  focal_point:
+
+
+#links:
+#- icon: twitter
+
+#  icon_pack: fab
+
+#  name: Follow
+
+#  url: https://twitter.com/georgecushen
+
+url_code: ""
+
+url_pdf: ""
+
+url_slides: ""
+
+slides: example
+---
+We’re excited to spotlight one of our Meta-Research Collaborative members. Rémi’s work exemplifies the kind of rigorous, inclusive, and innovative research we aim to support and amplify.

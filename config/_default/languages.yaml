@@ -5,8 +5,25 @@
 # Default language
 en:
   locale: en-us
-  # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
-  #contentDir: content/en
+  contentDir: content/en
+
+fr:
+  locale: fr
+  contentDir: content/fr
+  params:
+    hugoblox:
+      seo:
+        location:
+          phone: "Trois-trois-deux 400 6781"
+          address:
+            street: "6 Washington Place"
+            city: "New York"
+            region: "New York"
+            postal_code: "10003"
+            country: "États-Unis"
+      locale:
+        date_format: "2 Jan 2006"
+        address_format: fr
 
 # Uncomment the lines below to configure your website in a second language.
 #zh:

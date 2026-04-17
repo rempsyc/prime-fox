@@ -1,0 +1,31 @@
+main:
+  - name: Bio
+    url: bio/
+    weight: 20
+  - name: Publications
+    url: publications/
+    weight: 30
+  - name: Nouvelles
+    url: nouvelles/
+    weight: 40
+  - name: Blog
+    url: blog/
+    weight: 45
+  - name: Média
+    url: media/
+    weight: 50
+  - name: Tutoriels R
+    url: tutoriels/
+    weight: 60
+  - name: CV
+    url: ../cv.pdf
+    weight: 70
+    params:
+      target: _blank
+      rel: noopener
+  - name: Contact
+    url: contact/
+    weight: 80
+  - name: Donnez
+    url: donnez/
+    weight: 90

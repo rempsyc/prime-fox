@@ -12,19 +12,13 @@ hugoblox:
   # Site-level branding (for people/profiles, use the author system in content/authors/)
   # ────────────────────────────────────────────────────────────────────────────
   identity:
-    # Site name - shown in navbar, footer, copyright, and browser title by default
-    name: "Your Name"
-    # Legal entity for copyright notices (defaults to name if not set)
-    organization: ""
-    # Schema.org type for structured data
-    type: person                        # person | organization | local_business
-    # Short tagline displayed on your site
+    name: "Rémi Thériault"
+    organization: "Université du Québec à Montréal"
+    type: person
     tagline: ""
-    # Site meta description for search engines and social sharing
-    description: "The highly-customizable Hugo Academic theme powered by HugoBlox Kit. Easily create your personal academic website."
-    # Social accounts (used for meta tags like Twitter Cards)
+    description: ""
     social:
-      twitter: "MakeOwnable"              # Twitter/X handle for Twitter Cards (without @)
+      twitter: "rempsyc"
 
   # ────────────────────────────────────────────────────────────────────────────
   # THEME
@@ -32,7 +26,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   theme:
     # Mode: 'light', 'dark', or 'system' (follows OS preference)
-    mode: system
+    mode: light
     # Theme pack: name from data/themes/ or { light: "x", dark: "y" } for mix-and-match
     pack: "default"
     # Optional: Override theme pack colors
@@ -48,10 +42,10 @@ hugoblox:
       background: ""
       foreground: ""
       header:
-        background: ""
+        background: "#ffffff"
         foreground: ""
       footer:
-        background: ""
+        background: "#ffffff"
         foreground: ""
 
   # ────────────────────────────────────────────────────────────────────────────
@@ -60,7 +54,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   typography:
     # Theme pack: name from data/fonts/
-    pack: "academic"
+    pack: "custom"
 
   # ────────────────────────────────────────────────────────────────────────────
   # LAYOUT
@@ -88,8 +82,8 @@ hugoblox:
     align: center                       # left | center | right
     # Feature toggles
     search: true
-    theme_toggle: true
-    theme_picker: true
+    theme_toggle: false
+    theme_picker: false
     language_switcher: true
     # Call-to-action button
     cta:
@@ -114,7 +108,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   copyright:
     # Copyright notice - supports {year}, {name}, {license} placeholders
-    notice: "© {year} {name}. This work is licensed under {license}"
+    notice: "© {year} Rémi Thériault. This work is licensed under {license}"
     license:
       type: cc                          # cc | custom
       allow_derivatives: false
@@ -126,20 +120,18 @@ hugoblox:
   # Search engine optimization - overrides and technical settings
   # ────────────────────────────────────────────────────────────────────────────
   seo:
-    # Browser tab title override (defaults to identity.name if not set)
     title: ""
-    # For local_business identity type only
     location:
       address:
-        street: ""
-        city: ""
-        region: ""
-        postal_code: ""
-        country: ""
+        street: "6 Washington Place"
+        city: "New York"
+        region: "New York"
+        postal_code: "10003"
+        country: "USA"
       coordinates:
-        latitude: null
-        longitude: null
-      phone: ""
+        latitude: 40.72935447774295
+        longitude: -73.99440764748589
+      phone: "Three-Three-Two 400 6781"
     # AI/LLM crawler guidance (llms.txt)
     ai:
       allow:
@@ -198,9 +190,9 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   analytics:
     google:
-      measurement_id: ""                # Google Analytics 4: G-XXXXXXXXXX
+      measurement_id: "UA-162599761-3"
     google_tag_manager:
-      container_id: ""                  # GTM-XXXXXXX
+      container_id: ""
     plausible:
       domain: ""
     fathom:
